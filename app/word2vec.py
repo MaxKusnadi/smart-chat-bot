@@ -11,6 +11,8 @@ class Word2Vec:
     def similarity_between_words(self, word1, word2):
         assert(word1.islower())
         assert(word2.islower())
+        word1 = word1.replace(" ", "_")
+        word2 = word2.replace(" ", "_")
         try:
             score = self.model.similarity(word1, word2)
         except KeyError:

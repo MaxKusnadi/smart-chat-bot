@@ -32,7 +32,7 @@ class Matcher:
                       for noun in func.noun_keywords]
         verb_scores = [self.model.similarity_between_words(query.verb, verb)\
                        for verb in func.verb_keywords]
-        print("{},{:.2},{:.2}".format(func,max(obj_scores),max(verb_scores)))
+        print("{},{:.2},{:.2}".format(func,float(max(obj_scores)),float(max(verb_scores))))
         return score_func(max(obj_scores), max(verb_scores))
 
 def score_func(obj_score, verb_score):
