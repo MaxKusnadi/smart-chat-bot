@@ -1,0 +1,160 @@
+{
+  "sentences": [
+    {
+      "text": {
+        "content": "Show all my pending assignments.",
+        "beginOffset": 0
+      }
+    },
+    {
+      "text": {
+        "content": "Where is Google?",
+        "beginOffset": 33
+      }
+    }
+  ],
+  "language": "en",
+  "tokens": [
+    {
+      "text": {
+        "content": "Show",
+        "beginOffset": 0
+      },
+      "partOfSpeech": {
+        "tag": "VERB"
+      },
+      "lemma": "Show",
+      "dependencyEdge": {
+        "headTokenIndex": 0,
+        "label": "ROOT"
+      }
+    },
+    {
+      "text": {
+        "content": "all",
+        "beginOffset": 5
+      },
+      "partOfSpeech": {
+        "tag": "DET"
+      },
+      "lemma": "all",
+      "dependencyEdge": {
+        "headTokenIndex": 4,
+        "label": "PREDET"
+      }
+    },
+    {
+      "text": {
+        "content": "my",
+        "beginOffset": 9
+      },
+      "partOfSpeech": {
+        "tag": "PRON"
+      },
+      "lemma": "my",
+      "dependencyEdge": {
+        "headTokenIndex": 4,
+        "label": "POSS"
+      }
+    },
+    {
+      "text": {
+        "content": "pending",
+        "beginOffset": 12
+      },
+      "partOfSpeech": {
+        "tag": "ADJ"
+      },
+      "lemma": "pending",
+      "dependencyEdge": {
+        "headTokenIndex": 4,
+        "label": "AMOD"
+      }
+    },
+    {
+      "text": {
+        "content": "assignments",
+        "beginOffset": 20
+      },
+      "partOfSpeech": {
+        "tag": "NOUN"
+      },
+      "lemma": "assignment",
+      "dependencyEdge": {
+        "headTokenIndex": 0,
+        "label": "DOBJ"
+      }
+    },
+    {
+      "text": {
+        "content": ".",
+        "beginOffset": 31
+      },
+      "partOfSpeech": {
+        "tag": "PUNCT"
+      },
+      "lemma": ".",
+      "dependencyEdge": {
+        "headTokenIndex": 0,
+        "label": "P"
+      }
+    },
+    {
+      "text": {
+        "content": "Where",
+        "beginOffset": 33
+      },
+      "partOfSpeech": {
+        "tag": "ADV"
+      },
+      "lemma": "Where",
+      "dependencyEdge": {
+        "headTokenIndex": 7,
+        "label": "ADVMOD"
+      }
+    },
+    {
+      "text": {
+        "content": "is",
+        "beginOffset": 39
+      },
+      "partOfSpeech": {
+        "tag": "VERB"
+      },
+      "lemma": "be",
+      "dependencyEdge": {
+        "headTokenIndex": 7,
+        "label": "ROOT"
+      }
+    },
+    {
+      "text": {
+        "content": "Google",
+        "beginOffset": 42
+      },
+      "partOfSpeech": {
+        "tag": "NOUN"
+      },
+      "lemma": "Google",
+      "dependencyEdge": {
+        "headTokenIndex": 7,
+        "label": "NSUBJ"
+      }
+    },
+    {
+      "text": {
+        "content": "?",
+        "beginOffset": 48
+      },
+      "partOfSpeech": {
+        "tag": "PUNCT"
+      },
+      "lemma": "?",
+      "dependencyEdge": {
+        "headTokenIndex": 7,
+        "label": "P"
+      }
+    }
+  ],
+  "entities": []
+}

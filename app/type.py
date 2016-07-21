@@ -1,5 +1,7 @@
 from constants import CREATE_KEYWORDS, DELETE_KEYWORDS, QUERY_KEYWORDS, UPDATE_KEYWORDS
 
+ALL_FUNCS = []
+
 def create_decorator(behaviour_keywords):
     """
     Create a behaviour decorator, eg: query.
@@ -14,8 +16,10 @@ def create_decorator(behaviour_keywords):
         def decorator(fn):
 
             class Custom_Behaviour:
-                verb_keywords = behaviour_keywords
-                noun_keywords = noun_keywords_
+
+                def __init__(self):
+                    self.verb_keywords = behaviour_keywords
+                    self.noun_keywords = noun_keywords_
 
                 def __str__(self):
                     return "<decorator.noun_keywords:{}>".format(self.noun_keywords)
@@ -23,7 +27,9 @@ def create_decorator(behaviour_keywords):
                 def __call__ (self, *args):
                     return fn(*args)
 
-            return Custom_Behaviour()
+            cb = Custom_Behaviour()
+            ALL_FUNCS.append(cb)
+            return cb
         return decorator
     return behaviour
 
