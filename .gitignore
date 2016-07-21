@@ -3,7 +3,7 @@
 /Scripts
 
 /__pycache__
-app/__pycache__/
+/app/__pycache__
 
 pip-selfcheck.json
 hackaton.sublime-project
