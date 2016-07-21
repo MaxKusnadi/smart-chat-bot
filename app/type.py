@@ -32,10 +32,7 @@ def create_decorator(behaviour_keywords):
         return decorator
     return behaviour
 
-create = create_decorator(CREATE_KEYWORDS)
-delete = create_decorator(DELETE_KEYWORDS)
-query = create_decorator(QUERY_KEYWORDS)
-update = create_decorator(UPDATE_KEYWORDS)
+
 
 if __name__ == "__main__":
     from constants import CLASSROOM
