@@ -7,6 +7,8 @@ ASSIGNMENT = ('assignment', 'submission', 'test', 'exam', 'homework')
 
 WORD2VEC_MODEL_PATH = "static/word2vec_model.bin"
 
+SCORE_THRESHOLD = 0.7
+
 ALL_FUNCS = []
 # Response
 CREATE_CLASSROOM = "Classroom created"

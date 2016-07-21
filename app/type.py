@@ -21,7 +21,7 @@ def create_decorator(behaviour_keywords):
                     self.noun_keywords = noun_keywords_
 
                 def __str__(self):
-                    return "<decorator.noun_keywords:{}>".format(self.noun_keywords)
+                    return "<{},{}>".format(self.noun_keywords, self.verb_keywords)
 
                 def __call__ (self, *args):
                     return fn(*args)
@@ -36,6 +36,8 @@ def create_decorator(behaviour_keywords):
 
 if __name__ == "__main__":
     from constants import CLASSROOM
+    create = create_decorator(CREATE_KEYWORDS)
+    delete = create_decorator(DELETE_KEYWORDS)
     @create(CLASSROOM)
     def create_classroom():
         return True
