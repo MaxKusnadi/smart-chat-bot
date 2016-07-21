@@ -10,5 +10,11 @@
             </p>
             <p><input type="submit" value="Execute"></p>
         </form>
+        </br>
+        <div>
+            {% if result %}
+            <p>{{ result.result }}</p>
+            {% endif %}
+        </div>
     </body>
 </html>
