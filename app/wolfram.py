@@ -39,10 +39,7 @@ def findResult(xml):
 def dictResult(element):
     d = dict()
     d['type'] = element.get('title')
-    if(d['type'] == 'Image'):
-        d['text'] = element.find('subpod').find('imagesource').text
-    else:
-        d['text'] = element.find('subpod').find('img').get('src')
+    d['text'] = element.find('subpod').find('img').get('src')
     return d
 
 def searchWolfram(query):
