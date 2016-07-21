@@ -1,6 +1,5 @@
-from constants import CREATE_KEYWORDS, DELETE_KEYWORDS, QUERY_KEYWORDS, UPDATE_KEYWORDS
-
-ALL_FUNCS = []
+from constants import CREATE_KEYWORDS, DELETE_KEYWORDS, QUERY_KEYWORDS, UPDATE_KEYWORDS,\
+                      ALL_FUNCS
 
 def create_decorator(behaviour_keywords):
     """
@@ -43,6 +42,11 @@ if __name__ == "__main__":
     @create(CLASSROOM)
     def create_classroom():
         return True
+    @delete(CLASSROOM)
+    def delete_classroom():
+        return True
     print(CREATE_KEYWORDS == create_classroom.verb_keywords)
     print(CLASSROOM == create_classroom.noun_keywords)
     print(create_classroom())
+    print(DELETE_KEYWORDS == delete_classroom.verb_keywords)
+    print(len(ALL_FUNCS) == 2)

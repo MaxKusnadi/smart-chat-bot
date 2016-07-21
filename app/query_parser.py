@@ -4,7 +4,7 @@ class Query:
 
     def __init__(self, syntax):
         self.syntax = syntax
-        self.noun = None
+        self.obj = None
         self.verb = None
 
 class Query_Parser:
@@ -12,8 +12,8 @@ class Query_Parser:
     def parse(self, syntax):
         syntax = trim_to_first_sentence(syntax)
         query = Query(syntax)
-        query.noun = self.get_obj(syntax)
-        query.verb = self.get_verb(syntax)
+        query.obj = self.get_obj(syntax).lower()
+        query.verb = self.get_verb(syntax).lower()
         return query
 
     def get_obj(self, query):
@@ -25,7 +25,7 @@ class Query_Parser:
                             if token["dependencyEdge"]["headTokenIndex"]
                                     == obj_index and
                                token["partOfSpeech"]["tag"] == "NOUN"]
-            return " ".join([token["text"]["content"] 
+            return " ".join([token["lemma"] 
                              for token in sorted(dobjs, 
                                     key=lambda token: token["text"]["beginOffset"])])
         else:
@@ -35,7 +35,7 @@ class Query_Parser:
         root = next((token for token in query["tokens"]
                      if token["dependencyEdge"]["label"]=="ROOT"))
         if root["partOfSpeech"]["tag"] == "VERB":
-            return root["text"]["content"]
+            return root["lemma"]
         else:
             return None
 

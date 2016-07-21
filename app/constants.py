@@ -5,3 +5,5 @@ QUERY_KEYWORDS = ("find", "search", "list")
 CLASSROOM = ("classroom", "class")
 
 WORD2VEC_MODEL_PATH = "static/word2vec_model.bin"
+
+ALL_FUNCS = []
