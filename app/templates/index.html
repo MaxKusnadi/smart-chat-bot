@@ -13,7 +13,13 @@
         </br>
         <div>
             {% if result %}
-            <p>{{ result.result }}</p>
+                {% for row in result %}
+                    <div>
+                        <p><b>{{ row.type }}</b></p>
+                        <img src={{ row.text }}></img>
+                    </div>
+                    <br>
+                {% endfor %}
             {% endif %}
         </div>
     </body>
