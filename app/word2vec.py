@@ -1,6 +1,6 @@
 from gensim.models import word2vec
 
-from constants import WORD2VEC_MODEL_PATH
+from app.constants import WORD2VEC_MODEL_PATH
 
 
 class Word2Vec:

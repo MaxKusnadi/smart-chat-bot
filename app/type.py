@@ -1,5 +1,5 @@
-from constants import CREATE_KEYWORDS, DELETE_KEYWORDS, QUERY_KEYWORDS, UPDATE_KEYWORDS,\
-                      ALL_FUNCS
+from app.constants import CREATE_KEYWORDS, DELETE_KEYWORDS, QUERY_KEYWORDS, UPDATE_KEYWORDS,\
+                          ALL_FUNCS
 
 def create_decorator(behaviour_keywords):
     """
@@ -25,7 +25,6 @@ def create_decorator(behaviour_keywords):
 
                 def __call__ (self, *args):
                     return fn(*args)
-
             cb = Custom_Behaviour()
             ALL_FUNCS.append(cb)
             return cb

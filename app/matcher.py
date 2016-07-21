@@ -1,7 +1,7 @@
-from word2vec import Word2Vec
-from query_parser import Query_Parser
-from google import analyze_syntax
-from constants import SCORE_THRESHOLD
+from app.word2vec import Word2Vec
+from app.query_parser import Query_Parser
+from app.google import analyze_syntax
+from app.constants import SCORE_THRESHOLD
 
 class Matcher:
 

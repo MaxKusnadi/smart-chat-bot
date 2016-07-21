@@ -5,7 +5,7 @@ QUERY_KEYWORDS = ("find", "search", "list", 'show')
 CLASSROOM = ("classroom", "class", 'lesson')
 ASSIGNMENT = ('assignment', 'submission', 'test', 'exam', 'homework')
 
-WORD2VEC_MODEL_PATH = "static/word2vec_model.bin"
+WORD2VEC_MODEL_PATH = "app/static/word2vec_model.bin"
 
 SCORE_THRESHOLD = 0.7
 
