@@ -1,0 +1,14 @@
+<html>
+    <head>
+        <title>Smart Chat Bot</title>
+    </head>
+    <body>
+         <form action="" method="post" name="login">
+            {{ form.hidden_tag() }}
+            <p>
+                {{ form.command(size=120) }}<br>
+            </p>
+            <p><input type="submit" value="Execute"></p>
+        </form>
+    </body>
+</html>
