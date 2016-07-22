@@ -12,6 +12,7 @@ class Query:
     def is_valid(self):
         return self.obj and self.verb
 
+
 class Query_Parser:
 
     def parse(self, syntax):
@@ -27,22 +28,22 @@ class Query_Parser:
 
     def get_obj(self, syntax):
         dobj = next((token for token in syntax["tokens"]
-                     if token["dependencyEdge"]["label"]=="DOBJ"), None)
+                     if token["dependencyEdge"]["label"] == "DOBJ"), None)
         if dobj:
             obj_index = syntax["tokens"].index(dobj)
             dobjs = [dobj] + [token for token in syntax["tokens"]
-                            if token["dependencyEdge"]["headTokenIndex"]
-                                    == obj_index and
-                               token["partOfSpeech"]["tag"] == "NOUN"]
-            return " ".join([token["lemma"].lower() 
-                             for token in sorted(dobjs, 
-                                    key=lambda token: token["text"]["beginOffset"])])
+                              if token["dependencyEdge"]["headTokenIndex"]
+                              == obj_index and
+                              token["partOfSpeech"]["tag"] == "NOUN"]
+            return " ".join([token["lemma"].lower()
+                             for token in sorted(dobjs,
+                                                 key=lambda token: token["text"]["beginOffset"])])
         else:
             return None
 
     def get_verb(self, syntax):
         root = next((token for token in syntax["tokens"]
-                     if token["dependencyEdge"]["label"]=="ROOT"))
+                     if token["dependencyEdge"]["label"] == "ROOT"))
         if root["partOfSpeech"]["tag"] == "VERB":
             return root["lemma"].lower()
         else:
@@ -50,30 +51,30 @@ class Query_Parser:
 
     def get_subj(self, syntax):
         subj = next((token for token in syntax["tokens"]
-                     if token["dependencyEdge"]["label"]=="NSUBJ"), None)
+                     if token["dependencyEdge"]["label"] == "NSUBJ"), None)
         if subj:
             subj_index = syntax["tokens"].index(subj)
             subjs = [subj] + [token for token in syntax["tokens"]
-                            if token["dependencyEdge"]["headTokenIndex"]
-                                    == subj_index and
-                               token["partOfSpeech"]["tag"] == "NOUN"]
-            return " ".join([token["lemma"].lower() 
-                             for token in sorted(subjs, 
-                                    key=lambda token: token["text"]["beginOffset"])])
+                              if token["dependencyEdge"]["headTokenIndex"]
+                              == subj_index and
+                              token["partOfSpeech"]["tag"] == "NOUN"]
+            return " ".join([token["lemma"].lower()
+                             for token in sorted(subjs,
+                                                 key=lambda token: token["text"]["beginOffset"])])
         else:
             return None
 
     def get_entities(self, syntax):
         nouns = [token for token in syntax["tokens"]
-                       if token["partOfSpeech"]["tag"] == "NOUN"]
+                 if token["partOfSpeech"]["tag"] == "NOUN"]
         result = []
         for noun in nouns:
             noun_index = syntax["tokens"].index(noun)
             group_noun = [noun] + [token for token in nouns
-                                   if token["dependencyEdge"]["headTokenIndex"]==noun_index]
+                                   if token["dependencyEdge"]["headTokenIndex"] == noun_index]
             result.append(" ".join([token["lemma"].lower()
                                     for token in sorted(group_noun,
-                                        key=lambda token: token["text"]["beginOffset"])]))
+                                                        key=lambda token: token["text"]["beginOffset"])]))
         return result
 
 
