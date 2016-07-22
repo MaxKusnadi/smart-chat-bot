@@ -40,7 +40,7 @@ class Query_Parser:
 
     def get_obj(self, syntax):
         dobj = next((token for token in syntax["tokens"]
-                     if "OBJ" in token["dependencyEdge"]["label"]), None)
+                     if "OBJ" in token["dependencyEdge"]["label"] and token["lemma"]!="what"), None)
         if dobj:
             obj_index = syntax["tokens"].index(dobj)
             dobjs = [dobj] + [token for token in syntax["tokens"]
