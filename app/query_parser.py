@@ -10,6 +10,7 @@ class Query:
     def is_valid(self):
         return self.obj and self.verb
 
+
 class Query_Parser:
 
     def parse(self, syntax):
@@ -21,26 +22,27 @@ class Query_Parser:
 
     def get_obj(self, query):
         dobj = next((token for token in query["tokens"]
-                     if token["dependencyEdge"]["label"]=="DOBJ"), None)
+                     if token["dependencyEdge"]["label"] == "DOBJ"), None)
         if dobj:
             obj_index = query["tokens"].index(dobj)
             dobjs = [dobj] + [token for token in query["tokens"]
-                            if token["dependencyEdge"]["headTokenIndex"]
-                                    == obj_index and
-                               token["partOfSpeech"]["tag"] == "NOUN"]
-            return " ".join([token["lemma"].lower() 
-                             for token in sorted(dobjs, 
-                                    key=lambda token: token["text"]["beginOffset"])])
+                              if token["dependencyEdge"]["headTokenIndex"]
+                              == obj_index and
+                              token["partOfSpeech"]["tag"] == "NOUN"]
+            return " ".join([token["lemma"].lower()
+                             for token in sorted(dobjs,
+                                                 key=lambda token: token["text"]["beginOffset"])])
         else:
             return None
 
     def get_verb(self, query):
         root = next((token for token in query["tokens"]
-                     if token["dependencyEdge"]["label"]=="ROOT"))
+                     if token["dependencyEdge"]["label"] == "ROOT"))
         if root["partOfSpeech"]["tag"] == "VERB":
             return root["lemma"].lower()
         else:
             return None
+
 
 def trim_to_first_sentence(syntax):
     if len(syntax["sentences"]) == 1:
