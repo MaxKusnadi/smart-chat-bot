@@ -18,8 +18,10 @@ def searchGoogle(query):
         ans = json.loads(json.dumps(response))
 
     d = dict()
+    abc = list()
 
     if (ans is not None):
+        counter = 0
         for data in response.get("items", []):
             d['type'] = data["title"]
             try:
@@ -33,12 +35,16 @@ def searchGoogle(query):
                             ['src']
                     except:
                         d['text'] = ""
-            break
+            counter += 1
+            abc.append(d)
+            if counter == 3:
+                break
     else:
         d['type'] = "I don't understand your query"
         d['text'] = ''
+        abc.append(d)
 
-    return [d]
+    return abc
 
 if __name__ == '__main__':
     print(searchGoogle('Taylor Swift'))
