@@ -34,7 +34,7 @@ class Index(Resource):
                 result = searchWolfram(command)
 
             if len(result) == 0:
-                keyword = query.obj
+                keyword = command
                 if not keyword:
                     d = dict()
                     d['type'] = "I don't understand your query"

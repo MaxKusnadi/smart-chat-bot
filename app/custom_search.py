@@ -52,4 +52,4 @@ def searchGoogle(query):
     return abc
 
 if __name__ == '__main__':
-    print(searchGoogle('Taylor Swift'))
+    print(searchGoogle('who is shivanu shukla'))
