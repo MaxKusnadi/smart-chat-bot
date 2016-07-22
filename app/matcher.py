@@ -1,6 +1,4 @@
 from app.word2vec import Word2Vec
-from app.query_parser import Query_Parser
-from app.google import analyze_syntax
 from app.constants import SCORE_THRESHOLD
 
 class Matcher:
@@ -8,12 +6,8 @@ class Matcher:
     def __init__(self, all_funcs):
         self.all_funcs = all_funcs
         self.model = Word2Vec()
-        self.query_parser = Query_Parser()
 
-    def match(self, query_string):
-        syntax_json = analyze_syntax(query_string)
-        print(syntax_json)
-        query_object = self.query_parser.parse(syntax_json)
+    def match(self, query_object):
         print("obj:{}\nverb:{}\n".format(query_object.obj, query_object.verb))
         if not query_object.is_valid():
             return None
