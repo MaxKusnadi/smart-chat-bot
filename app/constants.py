@@ -1,7 +1,7 @@
 CREATE_KEYWORDS = ("create", "make", 'add')
 DELETE_KEYWORDS = ("delete", "remove", 'erase')
 UPDATE_KEYWORDS = ("update", "edit")
-QUERY_KEYWORDS = ("find", "search", "list", 'show', "is")
+QUERY_KEYWORDS = ("find", "search", "list", 'show', "be")
 CLASSROOM = ("classroom", "class", 'lesson')
 ASSIGNMENT = ('assignment', 'submission', 'test', 'exam', 'homework')
 CLASSMATE = ("classmate", "friend", "buddy")
