@@ -1,26 +1,38 @@
 <html>
     <head>
         <title>Smart Chat Bot</title>
+        <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,700,500,900' rel='stylesheet' type='text/css'>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <!-- <script src={{ url_for('static', filename="js/skel.min.js") }}></script>
+        <script src={{ url_for('static', filename="js/skel-panels.min.js") }}></script>
+        <script src={{ url_for('static', filename="js/init.js") }}></script> -->
+        <link rel="stylesheet" href={{ url_for('static', filename="css/skel-noscript.css") }}/>
+        <link rel="stylesheet" href={{ url_for('static', filename="css/style.css") }} />
+        <link rel="stylesheet" href={{ url_for('static', filename="css/style-desktop.css") }} />
     </head>
     <body>
-         <form action="" method="post" name="login">
-            {{ form.hidden_tag() }}
-            <p>
-                {{ form.command(size=120) }}<br>
-            </p>
-            <p><input type="submit" value="Execute"></p>
-        </form>
-        </br>
-        <div>
-            {% if result %}
+        <div id="header">
+            <form action="" method="post" name="login" style="text-align: center">
+                {{ form.hidden_tag() }}
+                <p style="text-align: center">
+                    {{ form.command(size=80) }}<br>
+                </p>
+                <p>
+                    <input type="submit" value="Execute">
+                </p>
+            </form>
+        </div>
+        {% if result %}
+        <div id="main">
+            <div id='content' class='container'>
                 {% for row in result %}
-                    <div>
+                    <div class='row'>
                         <p><b>{{ row.type }}</b></p>
                         <img src={{ row.text }}></img>
                     </div>
-                    <br>
                 {% endfor %}
-            {% endif %}
+            </div>
         </div>
+        {% endif %}
     </body>
 </html>
