@@ -8,7 +8,8 @@ class Matcher:
         self.model = Word2Vec()
 
     def match(self, query_object):
-        print("obj:{}\nverb:{}\n".format(query_object.obj, query_object.verb))
+        print("obj:{}\nverb:{}\nsubj:{}\nentities:{}\n".format(
+            query_object.obj, query_object.verb, query_object.subj, query_object.entities))
         if not query_object.is_valid():
             return None
         func_score_pair = [(func, self.similarity_between_query_and_function(query_object, func))

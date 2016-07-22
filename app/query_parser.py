@@ -20,6 +20,8 @@ class Query_Parser:
         query.obj = self.get_obj(syntax)
         query.verb = self.get_verb(syntax)
         query.subj = self.get_subj(syntax)
+        if not query.obj:
+            query.obj = query.subj
         query.entities = self.get_entities(syntax)
         return query
 
