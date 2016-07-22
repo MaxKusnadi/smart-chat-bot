@@ -17,12 +17,16 @@ def searchGoogle(query):
     except AttributeError:
         ans = json.loads(json.dumps(response))
 
-    d = dict()
     abc = list()
 
     if (ans is not None):
         counter = 0
+        d = dict()
+        d['type'] = "I don't understand your query but this might help"
+        d['text'] = ''
+        abc.append(d)
         for data in response.get("items", []):
+            d = dict()
             d['type'] = data["title"]
             try:
                 d['text'] = data["pagemap"]["cse_image"][0]["src"]
@@ -40,6 +44,7 @@ def searchGoogle(query):
             if counter == 3:
                 break
     else:
+        d = dict()
         d['type'] = "I don't understand your query"
         d['text'] = ''
         abc.append(d)
