@@ -1,33 +1,38 @@
 from app.decorator import *
 from app.constants import *
 
+
 @create(CLASSROOM)
-def createAssignment():
+def createClassroom():
     d = dict()
     d['type'] = CREATE_CLASSROOM
     d['text'] = ""
     return [d]
 
+
 @delete(CLASSROOM)
-def deleteAssignment():
+def deleteClassroom():
     d = dict()
     d['type'] = DELETE_CLASSROOM
     d['text'] = ""
     return [d]
 
+
 @update(CLASSROOM)
-def updateAssignment():
+def updateClassroom():
     d = dict()
     d['type'] = UPDATE_CLASSROOM
     d['text'] = ""
     return [d]
 
+
 @query(CLASSROOM)
-def queryAssignment():
+def queryClassroom():
     d = dict()
     d['type'] = QUERY_CLASSROOM
     d['text'] = ""
     return [d]
+
 
 @create(ASSIGNMENT)
 def createAssignment():
@@ -36,12 +41,14 @@ def createAssignment():
     d['text'] = ""
     return [d]
 
+
 @delete(ASSIGNMENT)
 def deleteAssignment():
     d = dict()
     d['type'] = DELETE_ASSIGNMENT
     d['text'] = ""
     return [d]
+
 
 @update(ASSIGNMENT)
 def updateAssignment():
@@ -50,12 +57,14 @@ def updateAssignment():
     d['text'] = ""
     return [d]
 
+
 @query(ASSIGNMENT)
 def queryAssignment():
     d = dict()
     d['type'] = QUERY_ASSIGNMENT
     d['text'] = ""
     return [d]
+
 
 @query(CLASSMATE)
 def queryClassmate():
@@ -64,12 +73,14 @@ def queryClassmate():
     d["text"] = ""
     return [d]
 
+
 @create(POST)
 def createPost():
     d = dict()
     d["type"] = CREATE_POST
     d["text"] = ""
     return [d]
+
 
 @delete(POST)
 def deletePost():
@@ -78,12 +89,14 @@ def deletePost():
     d["text"] = ""
     return [d]
 
+
 @update(POST)
 def updatePost():
     d = dict()
     d["type"] = UPDATE_POST
     d["text"] = ""
     return [d]
+
 
 @query(POST)
 def queryPost():
@@ -92,12 +105,14 @@ def queryPost():
     d["text"] = ""
     return [d]
 
+
 @create(PROFILE)
 def createProfile():
     d = dict()
     d["type"] = CREATE_PROFILE
     d["text"] = ""
     return [d]
+
 
 @delete(PROFILE)
 def deleteProfile():
@@ -106,12 +121,14 @@ def deleteProfile():
     d["text"] = ""
     return [d]
 
+
 @update(PROFILE)
 def updateProfile():
     d = dict()
     d["type"] = UPDATE_PROFILE
     d["text"] = ""
     return [d]
+
 
 @query(PROFILE)
 def queryProfile():
@@ -120,6 +137,7 @@ def queryProfile():
     d["text"] = ""
     return [d]
 
+
 @update(GRADE)
 def updateGrade():
     d = dict()
@@ -127,10 +145,10 @@ def updateGrade():
     d["text"] = ""
     return [d]
 
+
 @query(GRADE)
 def queryGrade():
     d = dict()
     d["type"] = QUERY_GRADE
     d["text"] = ""
     return [d]
-

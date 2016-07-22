@@ -8,7 +8,7 @@ from app.query_parser import Query_Parser
 from app.google import analyze_syntax
 from app.constants import *
 from app.functions import *
-from app.customsearch import *
+from app.custom_search import *
 
 
 class Index(Resource):
