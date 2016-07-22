@@ -152,3 +152,11 @@ def queryGrade():
     d["type"] = QUERY_GRADE
     d["text"] = ""
     return [d]
+
+
+@query(TEACHER)
+def queryTeacher():
+    d = dict()
+    d["type"] = QUERY_TEACHER
+    d["text"] = ""
+    return [d]

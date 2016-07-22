@@ -32,12 +32,12 @@ class Query_Parser:
 
     def get_attr(self, syntax):
         attr = next((token for token in syntax["tokens"]
-                     if token["dependencyEdge"]["label"] == "ATTR", None))
+                     if token["dependencyEdge"]["label"] == "ATTR"), None)
         if attr:
             return attr["lemma"].lower()
         else:
             return None
-            
+
     def get_obj(self, syntax):
         dobj = next((token for token in syntax["tokens"]
                      if token["dependencyEdge"]["label"] == "DOBJ"), None)
