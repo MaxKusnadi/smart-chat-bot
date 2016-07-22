@@ -1,3 +1,5 @@
+WH_TYPE = ("who", "what", "how", "when", "whom", "why", "whose", "where")
+
 CREATE_KEYWORDS = ("create", "make", 'add')
 DELETE_KEYWORDS = ("delete", "remove", 'erase')
 UPDATE_KEYWORDS = ("update", "edit")
