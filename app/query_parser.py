@@ -22,10 +22,22 @@ class Query_Parser:
         query.verb = self.get_verb(syntax)
         query.subj = self.get_subj(syntax)
         if not query.obj:
-            query.obj = query.subj
+            attr = self.get_attr(syntax)
+            if attr:
+                query.obj = attr
+            else:
+                query.obj = query.subj
         query.entities = self.get_entities(syntax)
         return query
 
+    def get_attr(self, syntax):
+        attr = next((token for token in syntax["tokens"]
+                     if token["dependencyEdge"]["label"] == "ATTR", None))
+        if attr:
+            return attr["lemma"].lower()
+        else:
+            return None
+            
     def get_obj(self, syntax):
         dobj = next((token for token in syntax["tokens"]
                      if token["dependencyEdge"]["label"] == "DOBJ"), None)
