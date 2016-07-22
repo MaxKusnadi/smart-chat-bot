@@ -40,7 +40,7 @@ class Query_Parser:
 
     def get_obj(self, syntax):
         dobj = next((token for token in syntax["tokens"]
-                     if token["dependencyEdge"]["label"] == "DOBJ"), None)
+                     if "OBJ" in token["dependencyEdge"]["label"]), None)
         if dobj:
             obj_index = syntax["tokens"].index(dobj)
             dobjs = [dobj] + [token for token in syntax["tokens"]
@@ -63,7 +63,7 @@ class Query_Parser:
 
     def get_subj(self, syntax):
         subj = next((token for token in syntax["tokens"]
-                     if token["dependencyEdge"]["label"] == "NSUBJ"), None)
+                     if  "SUBJ" in token["dependencyEdge"]["label"]), None)
         if subj:
             subj_index = syntax["tokens"].index(subj)
             subjs = [subj] + [token for token in syntax["tokens"]
