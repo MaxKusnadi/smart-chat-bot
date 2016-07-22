@@ -43,10 +43,11 @@ class Query_Parser:
                      if "OBJ" in token["dependencyEdge"]["label"] and token["lemma"] not in WH_TYPE), None)
         if dobj:
             obj_index = syntax["tokens"].index(dobj)
-            dobjs = [dobj] + [token for token in syntax["tokens"]
-                              if token["dependencyEdge"]["headTokenIndex"]
-                              == obj_index and
-                              token["partOfSpeech"]["tag"] == "NOUN"]
+            dobjs = [dobj]
+            #  + [token for token in syntax["tokens"]
+            #                   if token["dependencyEdge"]["headTokenIndex"]
+            #                   == obj_index and
+            #                   token["partOfSpeech"]["tag"] == "NOUN"]
             return " ".join([token["lemma"].lower()
                              for token in sorted(dobjs,
                                                  key=lambda token: token["text"]["beginOffset"])])
@@ -66,10 +67,11 @@ class Query_Parser:
                      if  "SUBJ" in token["dependencyEdge"]["label"]), None)
         if subj:
             subj_index = syntax["tokens"].index(subj)
-            subjs = [subj] + [token for token in syntax["tokens"]
-                              if token["dependencyEdge"]["headTokenIndex"]
-                              == subj_index and
-                              token["partOfSpeech"]["tag"] == "NOUN"]
+            subjs = [subj]
+             # + [token for token in syntax["tokens"]
+             #                  if token["dependencyEdge"]["headTokenIndex"]
+             #                  == subj_index and
+             #                  token["partOfSpeech"]["tag"] == "NOUN"]
             return " ".join([token["lemma"].lower()
                              for token in sorted(subjs,
                                                  key=lambda token: token["text"]["beginOffset"])])
